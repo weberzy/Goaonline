@@ -1,0 +1,193 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Kriesi.at Theme Demos | Theme: Enfold Demos (All)</title>
+        
+        <link href="selector/styles.css" rel="stylesheet" media="all" />
+        
+		<!--[if IE]>
+			
+			<style type="text/css">
+			
+
+			</style>
+			
+		<![endif]--> 
+		
+
+	        
+        <script type="text/javascript" src="selector/jquery-1.4.2.min.js"></script>
+        
+        <script type="text/javascript">
+        
+       if (top.location != location) {
+		    top.location.href = document.location.href ;
+		}
+        
+        
+        var theme_list_open = false;
+        
+        $(document).ready(function () {
+        	
+        	var links = $("#theme_list ul li a"),
+        		prev_area = $(".preview_picture"),
+        		title_tag = $('title');
+        	
+        	function fixHeight () {
+        	
+	        	var headerHeight = $("#switcher").height();
+	        	$("#iframe").attr("height", (($(window).height()) - headerHeight) + 'px');
+        	
+        	}
+        	
+        	$(window).resize(function () 
+        	{
+        		fixHeight();
+        	
+        	}).resize();
+        	
+        	
+        	$("#theme_select").click( function () 
+        	{
+        		if (theme_list_open == true) 
+        		{
+	        		$(".center ul li ul").hide();
+	        		prev_area.hide();
+	        		theme_list_open = false;
+        		} 
+        		else 
+        		{
+        			var current = $('.hovered_item');
+        			if(current.length)
+        			{
+        				prev_area.css({display:'block'}).html("<img src='" + current.attr("data-image") + "' alt=''/>");
+        			}
+        			$(".center ul li ul").show();         		
+        			theme_list_open = true;
+        		}
+        		return false;
+        	});
+        	
+        	links.click(function () {
+        	
+	        	var current = $(this),
+	        		theme_data = current.attr("data-rel").split(","),
+	        		themename = current.find('.theme_name').text();
+	        	        	
+	        	$("li.purchase a").attr("href", theme_data[1]);
+	        	$("li.remove_frame a").attr("href", theme_data[0]);
+	        	$("#iframe").attr("src", theme_data[0]);
+	        	
+	        	$("#theme_list a#theme_select").text(themename);
+	        	
+	        	$(".center ul li ul").hide();
+	        	prev_area.hide();
+	        	if(title_tag.length && !$.browser.msie) title_tag.text('Kriesi.at Theme Demos | Theme: '+ themename);
+	        	theme_list_open = false;
+	        	
+	        	return false;
+        	
+        	});
+        	
+        	
+        	links.hover(function()
+        	{
+        		var current = $(this);
+        		links.removeClass('hovered_item');
+        		current.addClass('hovered_item');
+        		prev_area.css({display:'block'}).html("<img src='" + current.attr("data-image") + "' alt=''/>");
+        	},
+        	function()
+        	{
+        		
+        	});
+        	
+        	
+        	if('ontouchstart' in document.documentElement)
+        	{
+        		top.location.href = $("li.remove_frame a").attr("href");
+        	}
+        	
+        
+        });
+        
+        </script>
+         
+</head>
+
+<body>
+
+	<div id="switcher">
+	
+		<div class="center">
+		
+		<ul class='main_list'>
+		
+		<li><img src="selector/themedemo.jpg"  class='logo' alt="" /></li>
+		
+		<li id="theme_list"><a id="theme_select" href="#">Enfold Demos (All)</a>
+		
+			<ul>
+			
+					<li class="theme_abundance "><a href="#" data-image="https://3.s3.envato.com/files/8663403/images/1_preview.__large_preview.jpg" data-rel="https://kriesi.at/themes/abundance/,https://themeforest.net/item/abundance-ecommerce-business-theme/759562?ref=Kriesi"><span class="theme_name">Abundance</span><span class="theme_type">eCommerce</span></a>
+				
+						</li>	<li class="theme_angular "><a href="#" data-image="https://1.s3.envato.com/files/16383004/images/1_preview.__large_preview.jpg" data-rel="https://kriesi.at/themes/angular/,https://themeforest.net/item/angular-responsive-portfolio/1415600?ref=Kriesi"><span class="theme_name">Angular</span><span class="theme_type">Portfolio</span></a>
+				
+						</li>	<li class="theme_brightbox "><a href="#" data-image="https://s3.envato.com/files/2331373/images/1_preview.__large_preview.jpg" data-rel="https://kriesi.at/themes/brightbox/,https://themeforest.net/item/brightbox-business-portfolio-wordpress-theme/233917?ref=Kriesi"><span class="theme_name">Brightbox</span><span class="theme_type">Business</span></a>
+				
+						</li>	<li class="theme_choices "><a href="#" data-image="https://0.s3.envato.com/files/29337547/images/1_preview.__large_preview.jpg" data-rel="https://kriesi.at/themes/choices/,https://themeforest.net/item/choices-responsive-business-and-portfolio/2536338?ref=Kriesi"><span class="theme_name">Choices</span><span class="theme_type">Business</span></a>
+				
+						</li>	<li class="theme_coalition "><a href="#" data-image="https://2.s3.envato.com/files/5619281/images/1_preview.__large_preview.jpg" data-rel="https://kriesi.at/themes/coalition/,https://themeforest.net/item/coalition-one-page-wordpress-portfolio/492528?ref=Kriesi"><span class="theme_name">Coalition</span><span class="theme_type">One Page Portfolio</span></a>
+				
+						</li>	<li class="theme_coherence "><a href="#" data-image="https://1.s3.envato.com/files/26338963/images/1_preview.__large_preview.jpg" data-rel="https://kriesi.at/themes/coherence/,https://themeforest.net/item/coherence-responsive-business-portfolio/2279326?ref=Kriesi"><span class="theme_name">Coherence</span><span class="theme_type">Business</span></a>
+				
+						</li>	<li class="theme_corona "><a href="#" data-image="https://1.s3.envato.com/files/6192198/images/1_preview.__large_preview.jpg" data-rel="https://kriesi.at/themes/corona/,https://themeforest.net/item/corona-business-portfolio-theme/533913?ref=Kriesi"><span class="theme_name">Corona</span><span class="theme_type">Business</span></a>
+				
+						</li>	<li class="theme_enfold-overview highlight"><a href="#" data-image="https://kriesi.at/wp-content/uploads/2014/09/themedemo_enfold_overview.jpg" data-rel="https://kriesi.at/themes/enfold-overview/,https://themeforest.net/item/enfold-responsive-multipurpose-theme/4519990?ref=Kriesi"><span class="theme_name">Enfold Demos (All)</span><span class="theme_type">Popular</span></a>
+				
+						</li>	<li class="theme_enfold highlight"><a href="#" data-image="https://0.s3.envato.com/files/126371989/1_preview.__large_preview.png" data-rel="https://kriesi.at/themes/enfold/,https://themeforest.net/item/enfold-responsive-multipurpose-theme/4519990?ref=Kriesi"><span class="theme_name">Enfold</span><span class="theme_type">Popular: Multi Purpose</span></a>
+				
+						</li>	<li class="theme_enfold-shop hidden"><a href="#" data-image="https://kriesi.at/wp-content/uploads/2014/09/themedemo_enfold_overview.jpg" data-rel="https://kriesi.at/themes/enfold-overview/e-commerce/,https://themeforest.net/item/enfold-responsive-multipurpose-theme/4519990?ref=Kriesi"><span class="theme_name">Enfold Shop</span><span class="theme_type">E-Commerce</span></a>
+				
+						</li>	<li class="theme_eunoia "><a href="#" data-image="https://3.s3.envato.com/files/32148403/images/1_preview.__large_preview.jpg" data-rel="https://kriesi.at/themes/eunoia/,https://themeforest.net/item/eunoia-responsive-portfolio/2792441?ref=Kriesi"><span class="theme_name">Eunoia</span><span class="theme_type">Portfolio</span></a>
+				
+						</li>	<li class="theme_flagship "><a href="#" data-image="https://1.s3.envato.com/files/27599025/images/1_preview.__large_preview.jpg" data-rel="https://kriesi.at/themes/flagship/,https://themeforest.net/item/flagship-responsive-business-and-portfolio/2388340?ref=Kriesi"><span class="theme_name">Flagship</span><span class="theme_type">Business</span></a>
+				
+						</li>	<li class="theme_flashlight "><a href="#" data-image="https://2.s3.envato.com/files/7056181/images/1_preview.__large_preview.jpg" data-rel="https://kriesi.at/themes/flashlight/,https://themeforest.net/item/flashlight-fullscreen-background-portfolio-theme/616050?ref=Kriesi"><span class="theme_name">Flashlight</span><span class="theme_type">Portfolio/Photography</span></a>
+				
+						</li>	<li class="theme_incarnation "><a href="#" data-image="https://1.s3.envato.com/files/38090141/images/1_preview.__large_preview.jpg" data-rel="https://kriesi.at/themes/incarnation/,https://themeforest.net/item/incarnation-church-and-community-theme/3278228?ref=Kriesi"><span class="theme_name">Incarnation</span><span class="theme_type">Church/Community</span></a>
+				
+						</li>	<li class="theme_propulsion "><a href="#" data-image="https://0.s3.envato.com/files/13120356/images/1_preview.__large_preview.jpg" data-rel="https://kriesi.at/themes/propulsion/,https://themeforest.net/item/propulsion-responsive-business-ecommerce/1126092?ref=Kriesi"><span class="theme_name">Propulsion</span><span class="theme_type">Businnes/Ecommerce</span></a>
+				
+						</li>	<li class="theme_replete "><a href="#" data-image="https://1.s3.envato.com/files/42211720/images/1_preview.__large_preview.jpg" data-rel="https://kriesi.at/themes/replete/,https://themeforest.net/item/replete-ecommerce-and-business/3519946?ref=Kriesi"><span class="theme_name">Replete</span><span class="theme_type">Ecommerce/Businnes</span></a>
+				
+						</li>	<li class="theme_sentence "><a href="#" data-image="https://0.s3.envato.com/files/21414246/images/1_preview.__large_preview.jpg" data-rel="https://kriesi.at/themes/sentence/,https://themeforest.net/item/sentence-responsive-blog-and-portfolio/1846865?ref=Kriesi"><span class="theme_name">Sentence</span><span class="theme_type">Blog/Portfolio</span></a>
+				
+						</li>	<li class="theme_shoutbox "><a href="#" data-image="https://3.s3.envato.com/files/4465732/images/1_preview.__large_preview.jpg" data-rel="https://kriesi.at/themes/shoutbox/,https://themeforest.net/item/shoutbox-magazine/400938?ref=Kriesi"><span class="theme_name">Shoutbox</span><span class="theme_type">Magazine/Blog</span></a>
+				
+						</li>				
+			</ul>
+			<div class='preview_picture'></div>
+		
+		</li>	
+		
+		<li class="remove_frame"><a href="https://kriesi.at/themes/enfold-overview/">Remove Frame</a></li>		
+		<li class="purchase"><a href="https://themeforest.net/item/enfold-responsive-multipurpose-theme/4519990?ref=Kriesi">Purchase</a></li>		
+		</ul>
+	
+	</div>
+	
+	</div>
+	
+    <iframe id="iframe" src="https://kriesi.at/themes/enfold-overview/" ></iframe>
+    
+</body>
+
+
+</html>
+
